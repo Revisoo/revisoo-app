@@ -132,9 +132,9 @@ export default async function LeaderboardPage() {
 
       <div className="lb-page">
         <header className="lb-header">
-          <p className="lb-kicker">Syllo — Learning Ledger</p>
+          <p className="lb-kicker">Syllo - Learning Ledger</p>
           <h1 className="lb-title">The <em>Leaderboard</em></h1>
-          <p className="lb-date">Top learners by Syllo Score · Updated every 60 seconds</p>
+          <p className="lb-date">Top learners by Syllo Score - Updated every 60 seconds</p>
         </header>
 
         {entries.length === 0 ? (
