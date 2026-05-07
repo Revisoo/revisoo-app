@@ -43,7 +43,7 @@ export default function ClaimPage() {
       router.push(`/notes/${username}`);
     } catch (err: unknown) {
       const e = err as { status?: number };
-      if (e.status === 409) setError('Username already taken.');
+      if (e.status === 409) { setStatus('taken'); setError('Username already taken.'); }
       else setError('Something went wrong. Try again.');
       setSubmitting(false);
     }
@@ -270,7 +270,7 @@ export default function ClaimPage() {
 
       <div className="claim-page">
         <div className="masthead">
-          <p className="masthead-label">Syllo — Learning Ledger</p>
+          <p className="masthead-label">Syllo - Learning Ledger</p>
           <h1 className="masthead-title">Claim Your<br /><em>Dispatch</em></h1>
           <div className="masthead-rule" />
         </div>
@@ -296,12 +296,12 @@ export default function ClaimPage() {
             <div className={`status-line ${status === 'available' ? 'status-available' : status === 'taken' ? 'status-taken' : status === 'invalid' ? 'status-invalid' : status === 'checking' ? 'status-checking' : ''}`}>
               {status === 'available' && <><span className="status-dot" />Handle is available</>}
               {status === 'taken' && <><span className="status-dot" />Handle is taken</>}
-              {status === 'invalid' && <span>3–32 chars, letters, numbers, underscores</span>}
-              {status === 'checking' && <span>Checking…</span>}
+              {status === 'invalid' && <span>3-32 chars, letters, numbers, underscores</span>}
+              {status === 'checking' && <span>Checking...</span>}
             </div>
 
             <button type="submit" disabled={status !== 'available' || submitting}>
-              {submitting ? 'Claiming…' : 'Claim Handle'}
+              {submitting ? 'Claiming...' : 'Claim Handle'}
             </button>
 
             {error && <p className="error-msg">{error}</p>}

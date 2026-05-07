@@ -446,7 +446,7 @@ export default function LandingPage() {
               Automatic.
             </h1>
             <p className="masthead-desc">
-              Revisoo runs quietly in the background. While you sleep, it generates rich study notes from your syllabus and publishes them — ready to read each morning.
+              Revisoo runs quietly in the background. While you sleep, it generates rich study notes from your syllabus and publishes them - ready to read each morning.
             </p>
           </div>
           <div className="masthead-right">
@@ -470,7 +470,7 @@ export default function LandingPage() {
             </div>
             <div className="cta-row">
               <Link href="/claim" className="btn-primary">Claim your handle</Link>
-              <Link href="/leaderboard" className="btn-ghost">View leaderboard →</Link>
+              <Link href="/leaderboard" className="btn-ghost">View leaderboard -&gt;</Link>
             </div>
           </div>
         </section>
@@ -511,7 +511,7 @@ export default function LandingPage() {
               <p className="step-label">Finally</p>
               <h3 className="step-title">Let it run</h3>
               <p className="step-desc">
-                Run <code>python syllo.py schedule</code> to set a daily schedule. Notes generate and publish automatically — no further input needed.
+                Run <code>python syllo.py schedule</code> to set a daily schedule. Notes generate and publish automatically - no further input needed.
               </p>
             </div>
           </div>
@@ -528,23 +528,23 @@ export default function LandingPage() {
               Not summaries.<br /><em>Real notes.</em>
             </h2>
             <p className="what-body">
-              Each note is generated with full context — your syllabus, the topic&apos;s place in the curriculum, and what you&apos;ve already covered. The result reads like a knowledgeable friend explaining something over coffee.
+              Each note is generated with full context - your syllabus, the topic&apos;s place in the curriculum, and what you&apos;ve already covered. The result reads like a knowledgeable friend explaining something over coffee.
             </p>
-            <Link href="/notes/itsaryan" className="btn-ghost">See an example dispatch →</Link>
+            <Link href="/notes/itsaryan" className="btn-ghost">See an example dispatch -&gt;</Link>
           </div>
           <div className="what-right">
             <ul className="feature-list">
               {[
-                ['Opening hook', 'Starts with a real-world scenario or analogy — no dry definitions'],
+                ['Opening hook', 'Starts with a real-world scenario or analogy - no dry definitions'],
                 ['Concept explained simply', 'Plain language first, technical depth second'],
-                ['Named examples', 'Specific companies, systems, and real problems — not "for example, a database"'],
+                ['Named examples', 'Specific companies, systems, and real problems - not "for example, a database"'],
                 ['How it actually works', 'Components, trade-offs, and the why behind each decision'],
-                ['Common mistakes', 'What juniors get wrong that seniors don&apos;t'],
-                ['Key takeaways', '4–6 specific, punchy bullets you\'ll actually remember'],
+                ['Common mistakes', "What juniors get wrong that seniors don't"],
+                ['Key takeaways', "4-6 specific, punchy bullets you'll actually remember"],
               ].map(([title, desc], i) => (
                 <li key={i} className="feature-item">
                   <span className="feature-num">0{i + 1}</span>
-                  <span className="feature-text"><strong>{title}</strong> — {desc}</span>
+                  <span className="feature-text"><strong>{title}</strong> - {desc}</span>
                 </li>
               ))}
             </ul>
@@ -560,15 +560,15 @@ export default function LandingPage() {
           <div className="note-preview">
             <div className="note-preview-header">
               <span className="note-preview-tag">Daily</span>
-              <span className="note-preview-meta">Week 1 · Day 1 — System Design</span>
+              <span className="note-preview-meta">Week 1 - Day 1 - System Design</span>
             </div>
             <h3 className="note-preview-title">What is System Design?</h3>
             <p className="note-preview-body">
-              Imagine you&apos;re a software engineer at a startup, tasked with building a new social media platform. You&apos;ve got the features and UI figured out — but how do you design the underlying system to handle millions of users, ensure data consistency, and stay online when half your servers catch fire?
+              Imagine you&apos;re a software engineer at a startup, tasked with building a new social media platform. You&apos;ve got the features and UI figured out - but how do you design the underlying system to handle millions of users, ensure data consistency, and stay online when half your servers catch fire?
               <br /><br />
               <strong>System design</strong> is the process of defining the architecture, components, and interactions of a complex system to meet specific requirements. It&apos;s about trade-offs: scalability vs. simplicity, consistency vs. availability, speed vs. cost...
             </p>
-            <Link href="/notes/itsaryan" className="note-preview-link">Read full dispatch →</Link>
+            <Link href="/notes/itsaryan" className="note-preview-link">Read full dispatch -&gt;</Link>
           </div>
         </section>
 

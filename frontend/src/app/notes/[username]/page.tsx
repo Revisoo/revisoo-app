@@ -42,7 +42,7 @@ function NoteCard({ note }: { note: NoteResponse }) {
     }}>
       <div style={{ paddingTop: '0.15rem' }}>
         <p style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#6a5c3a', marginBottom: '0.4rem' }}>
-          Wk {note.week_number}{note.day_number != null ? ` · Day ${note.day_number}` : ''}
+          Wk {note.week_number}{note.day_number != null ? ` - Day ${note.day_number}` : ''}
         </p>
         <p style={{ fontSize: '0.65rem', color: '#5a4e30', marginBottom: '0.6rem', fontStyle: 'italic' }}>{formatted}</p>
         <Badge type={note.note_type} />
@@ -135,7 +135,7 @@ export default function NotesPage() {
         {/* Header */}
         <header style={{ marginBottom: '2.5rem', borderBottom: '2px solid rgba(200,168,74,0.25)', paddingBottom: '1.5rem' }}>
           <p style={{ fontSize: '0.6rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#8a7a5a', marginBottom: '0.5rem' }}>
-            Syllo — Notes Dispatch
+            Syllo - Notes Dispatch
           </p>
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <h1 style={{
@@ -165,7 +165,7 @@ export default function NotesPage() {
 
         {/* Notes */}
         {loading ? (
-          <p style={{ color: '#5a4e30', fontStyle: 'italic', fontSize: '0.85rem' }}>Loading dispatch…</p>
+          <p style={{ color: '#5a4e30', fontStyle: 'italic', fontSize: '0.85rem' }}>Loading dispatch...</p>
         ) : notes.length === 0 ? (
           <p style={{ color: '#5a4e30', fontStyle: 'italic', fontSize: '0.85rem' }}>No notes published yet.</p>
         ) : (
