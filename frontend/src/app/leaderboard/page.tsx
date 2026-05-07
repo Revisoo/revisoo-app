@@ -1,10 +1,15 @@
-import { getLeaderboard } from '@/lib/api';
+import { getLeaderboard, LeaderboardEntry } from '@/lib/api';
 
 export const dynamic = 'force-dynamic';
 
 export default async function LeaderboardPage() {
-  const data = await getLeaderboard();
-  const entries = data.entries;
+  let entries: LeaderboardEntry[] = [];
+  try {
+    const data = await getLeaderboard();
+    entries = data.entries;
+  } catch {
+    // show empty state if backend is unreachable
+  }
 
   return (
     <>

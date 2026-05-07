@@ -25,7 +25,7 @@ export default function ClaimPage() {
         const res = await checkUsername(username);
         setStatus(res.available ? 'available' : 'taken');
       } catch {
-        setStatus('idle');
+        setStatus('available');
       }
     }, 300);
 
