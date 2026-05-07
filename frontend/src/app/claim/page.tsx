@@ -39,6 +39,7 @@ export default function ClaimPage() {
     setError('');
     try {
       await claimUsername(username);
+      localStorage.setItem('syllo_username', username);
       router.push(`/notes/${username}`);
     } catch (err: unknown) {
       const e = err as { status?: number };

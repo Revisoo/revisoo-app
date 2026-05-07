@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 import { getNotes, recordView, NoteResponse, StreakResponse } from '@/lib/api';
 import UsernamePrompt from '@/components/UsernamePrompt';
 
@@ -65,14 +66,15 @@ function NoteCard({ note }: { note: NoteResponse }) {
           textTransform: 'uppercase',
           marginBottom: '0.75rem',
         }}>{note.syllabus_id}</p>
-        <p style={{
+        <div style={{
           fontFamily: "'Source Serif 4', serif",
           fontSize: '0.875rem',
           fontWeight: 300,
           color: '#b0a080',
           lineHeight: 1.75,
-          whiteSpace: 'pre-wrap',
-        }}>{note.content}</p>
+        }} className="note-md">
+          <ReactMarkdown>{note.content}</ReactMarkdown>
+        </div>
       </div>
     </article>
   );
@@ -113,6 +115,18 @@ export default function NotesPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: #080806; color: #f0e8d8; font-family: 'Source Serif 4', Georgia, serif; min-height: 100vh; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .note-md p { margin-bottom: 0.75rem; }
+        .note-md p:last-child { margin-bottom: 0; }
+        .note-md h1, .note-md h2, .note-md h3 { font-family: 'Playfair Display', serif; color: #d8c898; margin-bottom: 0.5rem; margin-top: 1rem; font-weight: 700; }
+        .note-md h1 { font-size: 1.1rem; }
+        .note-md h2 { font-size: 1rem; }
+        .note-md h3 { font-size: 0.9rem; }
+        .note-md ul, .note-md ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+        .note-md li { margin-bottom: 0.25rem; }
+        .note-md strong { color: #d8c898; font-weight: 600; }
+        .note-md em { font-style: italic; color: #c8a84a; }
+        .note-md code { font-family: monospace; font-size: 0.8rem; background: rgba(200,168,74,0.08); padding: 0.1em 0.35em; border-radius: 2px; color: #c8a84a; }
+        .note-md blockquote { border-left: 2px solid rgba(200,168,74,0.3); padding-left: 0.75rem; margin: 0.75rem 0; color: #8a7a5a; font-style: italic; }
       `}</style>
 
       {showPrompt && <UsernamePrompt onSubmit={handleIdentify} />}
